@@ -30,8 +30,8 @@ public class Acreditacion {
     }
     
     public void establecerProfesor(Profesor n) {
-        Profesor p1 = new Profesor("Connie Palmer", "contratado");
-        profesor = p1;
+        
+        profesor = n;
     }
 
     public double obtenerNota() {

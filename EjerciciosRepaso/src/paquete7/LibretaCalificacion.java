@@ -15,9 +15,9 @@ public class LibretaCalificacion {
     private String promedioCualitativo;
     private Acreditacion [] calificaciones;
     
-    public LibretaCalificacion(String n){
+    public LibretaCalificacion(String n, Acreditacion[] m){
         estudiante = n;
-        
+        calificaciones = m;
     }
     
     public void establecerEstudiante(String n){
@@ -84,10 +84,11 @@ public class LibretaCalificacion {
         cadena = String.format("%sNombre: %s\nCalificaciones:\n", cadena, 
                 obtenerEstudiante());
         for (int i = 0; i < obtenerCalificaciones().length; i++) {
-            cadena = String.format("%s\t\t%s - %s [%.2f]\n", cadena, 
+            cadena = String.format("%s\t\t%s - %s [%.2f] - %s\n", cadena, 
                     obtenerCalificaciones()[i].obtenerProfesor().obtenerNombre(),
                     obtenerCalificaciones()[i].obtenerNombreMateria(),
-                    obtenerCalificaciones()[i].obtenerNota());
+                    obtenerCalificaciones()[i].obtenerNota(),
+                    obtenerCalificaciones()[i].obtenerProfesor().obtenerTipo());
         }
         cadena = String.format("%sPromedio calificaciones: %.2f\n"
                 + "Promedio cuantitativo: %s\n",  
